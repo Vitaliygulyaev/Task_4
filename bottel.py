@@ -11,11 +11,11 @@ newsapi = NewsApiClient(api_key='e8f7d068fabb4bc99ae318f05f7b1829')
 @bot.message_handler(commands = ['start'])
 def send_welcome(message):
 	first_name = message.from_user.first_name
-	bot.send_message(message.chat.id, "Привет,"+str(first_name)+"!"+"\n"+
-									"Я - Кремлебот Владимир Соловьев. Вот что могу тебе предложить: ")
+	bot.send_message(message.chat.id, "Привет,"+str(first_name)+"!")
 	bot.send_message(message.chat.id, "/goTo - присоединиться к нам!"+"\n"+
 									"/choose_news_categories - выбрать категории Новостей (желательно ченить про загнивающий запад и хохлов)"+"\n"+
 									"/get_news - Вывести 10 релевантных новостей по моим подпискам"+"\n"+
+			 						"Чтобы сделать подписку на ключевое слово, набери #<ключевое слово> (например - #bitcoin)+"\n"+
 									"/remove_categories - посмотреть/удалить активные подписки на категории новостей"+"\n"+
 									"/remove_keywords - посмотреть/удалить активные подписки по ключевым словам")
 	
